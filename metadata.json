@@ -1,0 +1,6 @@
+{
+  "name": "Stack Ball",
+  "description": "3D arcade game where players smash, bump and bounce through revolving helix platforms to reach the bottom.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
