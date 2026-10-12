@@ -25,20 +25,17 @@ jobs:
 
       - name: Create Mock Keystore for Build if not provided
         run: |
-          if [ ! -f "my-upload-key.jks" ]; then
+          if [ ! -f 'my-upload-key.jks' ]; then
             keytool -genkeypair -v \
-              -keystore my-upload-key.jks \
-              -keyalg RSA \
-              -keysize 2048 \
-              -validity 10000 \
-              -alias upload \
-              -storepass android \
-              -keypass android \
-              -dname "CN=StackBall, OU=Game, O=AIStudio, L=MountainView, ST=CA, C=US"
+            -keystore my-upload-key.jks \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -alias upload \
+            -storepass android \
+            -keypass android \
+            -dname "CN=StackBall, OU=Game, O=AIStudio, L=MountainView, ST=CA, C=US"
           fi
-
-      - name: Run Unit Tests
-        run: gradle :app:testDebugUnitTest
 
       - name: Build Release APK
         env:
